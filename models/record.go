@@ -1,6 +1,7 @@
 package models
 
 import (
+	"database/sql"
 	"log"
 	"strconv"
 	"time"
@@ -33,4 +34,8 @@ func SerializeRecord(data []string) Record {
 		CountryCode: data[5],
 		UserAgent:   data[6],
 	}
+}
+
+func BulkInsertRecord(conn *sql.Conn, records []Record) error {
+	return nil
 }

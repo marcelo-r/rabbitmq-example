@@ -5,3 +5,9 @@ services:
     ports:
       - 5672:5672
       - 8080:15672
+  db:
+    image: postgres:13
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_PASSWORD: secretkey
