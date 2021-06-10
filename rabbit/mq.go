@@ -70,13 +70,3 @@ func (r *RabbitMQ) PublishRecord(record models.Record) error {
 	}
 	return nil
 }
-
-func (r *RabbitMQ) PublishRecordBulk(records []models.Record) error {
-	for _, record := range records {
-		err := r.PublishRecord(record)
-		if err != nil {
-			return fmt.Errorf("unable to publish: %w", err)
-		}
-	}
-	return nil
-}
